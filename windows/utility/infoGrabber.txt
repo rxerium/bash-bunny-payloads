@@ -1,0 +1,18 @@
+
+REM Set LED to amber
+LED A
+
+REM Secure Boot Status
+systeminfo | findstr /C:"Secure Boot" > output.txt
+
+REM Windows Version
+ver >> output.txt
+
+REM Users
+net user >> output.txt
+
+REM Antivirus Installed
+wmic /namespace:\\root\SecurityCenter2 path AntiVirusProduct get displayName /format:value >> output.txt
+
+REM Complete
+LED G
