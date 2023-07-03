@@ -22,7 +22,7 @@ QUACK STRING copy ./sam.save /root/udisk
 QUACK ENTER
 DELAY 1000
 QUACK STRING copy ./system.save /root/udisk
-QUACK ENTER
+QUACK ENTER                                                                                    
 DELAY 1000
 REM Set the LED to green
 LED R G
