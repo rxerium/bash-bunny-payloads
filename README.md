@@ -1,6 +1,6 @@
 # Bash Bunny Payloads
 
-A personal repository of payloads I've created for the Bash Bunny. These scripts 
+A personal repository of payloads I've created for the Bash Bunny.
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" alt="Handshake" width="25" height="25" /> References
 
